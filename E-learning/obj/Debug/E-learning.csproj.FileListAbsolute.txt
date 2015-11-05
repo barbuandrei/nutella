@@ -1,0 +1,114 @@
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\E-learning.dll.config
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\E-learning.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\E-learning.pdb
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Antlr3.Runtime.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\EntityFramework.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\EntityFramework.SqlServer.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.AspNet.Identity.Core.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.Cookies.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.Facebook.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.Google.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.OAuth.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.Twitter.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Web.Infrastructure.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Models.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Newtonsoft.Json.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Owin.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.Helpers.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.Mvc.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.Optimization.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.Razor.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.WebPages.Deployment.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.WebPages.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.WebPages.Razor.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\WebGrease.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Models.pdb
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.Helpers.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.Mvc.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.Optimization.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.Razor.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.WebPages.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.WebPages.Deployment.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\System.Web.WebPages.Razor.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Newtonsoft.Json.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Antlr3.Runtime.pdb
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\EntityFramework.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\EntityFramework.SqlServer.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.AspNet.Identity.Core.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.Facebook.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.Cookies.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.OAuth.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.Google.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.Twitter.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\ubb\Anul 3\WP\E-learning\E-learning\obj\Debug\E-learning.csprojResolveAssemblyReference.cache
+E:\ubb\Anul 3\WP\E-learning\E-learning\obj\Debug\E-learning.dll
+E:\ubb\Anul 3\WP\E-learning\E-learning\obj\Debug\E-learning.pdb
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\E-learning.dll.config
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\E-learning.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\E-learning.pdb
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Antlr3.Runtime.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\EntityFramework.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\EntityFramework.SqlServer.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.AspNet.Identity.Core.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.Cookies.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.Facebook.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.Google.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.OAuth.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.Twitter.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Web.Infrastructure.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Models.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Newtonsoft.Json.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Owin.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.Helpers.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.Mvc.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.Optimization.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.Razor.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.WebPages.Deployment.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.WebPages.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.WebPages.Razor.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\WebGrease.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Models.pdb
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.Helpers.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.Mvc.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.Optimization.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.Razor.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.WebPages.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.WebPages.Deployment.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\System.Web.WebPages.Razor.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Newtonsoft.Json.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Antlr3.Runtime.pdb
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\EntityFramework.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\EntityFramework.SqlServer.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.AspNet.Identity.Core.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.Facebook.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.Cookies.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.OAuth.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.Google.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.Twitter.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\obj\Debug\E-learning.csprojResolveAssemblyReference.cache
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\obj\Debug\E-learning.dll
+E:\ubb\Anul 3\PROIECT COLECTIV\E-learning\e-learning\E-learning\obj\Debug\E-learning.pdb
