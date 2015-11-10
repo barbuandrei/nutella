@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using E_learning.Models;
+using Models;
 
 namespace E_learning.Controllers
 {
@@ -78,6 +79,12 @@ namespace E_learning.Controllers
         {
             if (ModelState.IsValid)
             {
+                using(var db= new ELearningContext())
+                {
+                    User userr= new User(){UserName=model.UserName, Password= model.Password};
+                    db.Users.Add(userr);
+                    db.SaveChanges();
+                }
                 var user = new ApplicationUser() { UserName = model.UserName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

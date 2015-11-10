@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,7 +48,171 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthentificationLog.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Chat.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChatCategory.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChatSubscriber.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChatTopic.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comment.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommentType.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Course.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseSubscriber.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryFrequency.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELearningModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ELearningModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELearningModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ELearningModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ELearningModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Event.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventType.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GradeFormula.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupHomeworkQuestion.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Homework.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeworkType.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KeepScoreType.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyResult.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeType.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageDesign.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Permission.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionRole.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionUser.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Post.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostType.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionType.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Quiz.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuizQuestion.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuizType.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resource.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceCategory.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResourcePost.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Result.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SetNotice.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentsGroup.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TurninType.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRole.cs">
+      <DependentUpon>ELearningModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ELearningModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ELearningModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ELearningModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ELearningModel.edmx</DependentUpon>
+      <LastGenOutput>ELearningModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ELearningModel.edmx.diagram">
+      <DependentUpon>ELearningModel.edmx</DependentUpon>
+    </None>
+    <None Include="ELearningModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ELearningModel.edmx</DependentUpon>
+      <LastGenOutput>ELearningModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

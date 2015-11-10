@@ -1,0 +1,2930 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ELearningModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AuthentificationLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUser" Type="int" />
+          <Property Name="Data" Type="date" />
+        </EntityType>
+        <EntityType Name="Chat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdChatTopic" Type="int" />
+          <Property Name="Grade" Type="int" />
+          <Property Name="IdChatCategory" Type="int" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+        </EntityType>
+        <EntityType Name="ChatCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ChatSubscriber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdChat" Type="int" />
+          <Property Name="IdUser" Type="int" />
+        </EntityType>
+        <EntityType Name="ChatTopic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCommentType" Type="int" />
+          <Property Name="IdForum" Type="int" />
+          <Property Name="IdUser" Type="int" />
+          <Property Name="CommentContent" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="CommentType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="StarDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="IdDepartment" Type="int" />
+          <Property Name="IdGradeFormula" Type="int" />
+          <Property Name="ContactInfo" Type="varchar" MaxLength="250" />
+          <Property Name="CourseBlock" Type="bit" />
+        </EntityType>
+        <EntityType Name="CourseSubscriber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUser" Type="int" />
+          <Property Name="IdCourse" Type="int" />
+          <Property Name="IdGroup" Type="int" />
+        </EntityType>
+        <EntityType Name="DeliveryFrequency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCourse" Type="int" />
+          <Property Name="IdUser" Type="int" />
+          <Property Name="Deadline" Type="date" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="IdEventType" Type="int" />
+          <Property Name="Syllabus" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="EventType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GradeFormula">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HomeworkPercentage" Type="int" />
+          <Property Name="QuizPercentage" Type="int" />
+          <Property Name="FinalExamPercentage" Type="int" />
+        </EntityType>
+        <EntityType Name="GroupHomeworkQuestion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Homework">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="IdResource" Type="int" />
+          <Property Name="Score" Type="int" />
+          <Property Name="IdGroup" Type="int" />
+          <Property Name="IdHomeworkType" Type="int" />
+          <Property Name="IdTurninType" Type="int" />
+          <Property Name="IdCourse" Type="int" />
+        </EntityType>
+        <EntityType Name="HomeworkType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="KeepScoreType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ModifyResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdResult" Type="int" />
+          <Property Name="IdUser" Type="int" />
+          <Property Name="Data" Type="date" />
+          <Property Name="ModifyGrade" Type="int" />
+        </EntityType>
+        <EntityType Name="NoticeType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="IdDeliveryFrequency" Type="int" />
+        </EntityType>
+        <EntityType Name="PageDesign">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TextSize" Type="int" />
+          <Property Name="TextStyle" Type="varchar" MaxLength="50" />
+          <Property Name="TextColor" Type="varchar" MaxLength="50" />
+          <Property Name="BackgroundColor" Type="varchar" MaxLength="50" />
+          <Property Name="Alignment" Type="varchar" MaxLength="50" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PermissionRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRole" Type="int" />
+          <Property Name="IdPermission" Type="int" />
+        </EntityType>
+        <EntityType Name="PermissionUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdCourse" Type="int" />
+          <Property Name="IdUser" Type="int" />
+          <Property Name="IdPermission" Type="int" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPostType" Type="int" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="IdUser" Type="int" />
+        </EntityType>
+        <EntityType Name="PostType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Content" Type="varchar" MaxLength="250" />
+          <Property Name="Score" Type="int" />
+          <Property Name="IdGroup" Type="int" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="CorrectAnswer" Type="varchar" MaxLength="250" />
+          <Property Name="IdQuestionType" Type="int" />
+        </EntityType>
+        <EntityType Name="QuestionType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Quiz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="Deadline" Type="date" />
+          <Property Name="IdQuizType" Type="int" />
+          <Property Name="IdStudentGroup" Type="int" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="CompletionDeadline" Type="int" />
+          <Property Name="MaximumNumberOfAttempts" Type="int" />
+          <Property Name="IdKeepScoreType" Type="int" />
+          <Property Name="DisplayPersonalAnswer" Type="int" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="IPAdress" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="QuizQuestion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdQuestion" Type="int" />
+          <Property Name="IdQuiz" Type="int" />
+          <Property Name="IdCourse" Type="int" />
+        </EntityType>
+        <EntityType Name="QuizType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="IdCategory" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResourceCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResourcePost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdResource" Type="int" />
+          <Property Name="IdPost" Type="int" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUser" Type="int" />
+          <Property Name="IdCourse" Type="int" />
+          <Property Name="HomeworkGrade" Type="int" />
+          <Property Name="QuizGrade" Type="int" />
+          <Property Name="ExamGrade" Type="int" />
+          <Property Name="FinalGrade" Type="int" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SetNotice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUser" Type="int" />
+          <Property Name="IdNoticeType" Type="int" />
+          <Property Name="IdFrequency" Type="int" />
+        </EntityType>
+        <EntityType Name="StudentsGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TurninType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="int" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Surname" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdRole" Type="int" />
+          <Property Name="IdUser" Type="int" />
+        </EntityType>
+        <Association Name="FK_AuthentificationLog_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="AuthentificationLog" Type="Self.AuthentificationLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AuthentificationLog">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Chat_ChatCategory">
+          <End Role="ChatCategory" Type="Self.ChatCategory" Multiplicity="0..1" />
+          <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChatCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chat">
+              <PropertyRef Name="IdChatCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Chat_ChatTopic">
+          <End Role="ChatTopic" Type="Self.ChatTopic" Multiplicity="0..1" />
+          <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChatTopic">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chat">
+              <PropertyRef Name="IdChatTopic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChatSubscriber_Chat">
+          <End Role="Chat" Type="Self.Chat" Multiplicity="0..1" />
+          <End Role="ChatSubscriber" Type="Self.ChatSubscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChatSubscriber">
+              <PropertyRef Name="IdChat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChatSubscriber_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="ChatSubscriber" Type="Self.ChatSubscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChatSubscriber">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_CommentType">
+          <End Role="CommentType" Type="Self.CommentType" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="IdCommentType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Course_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="IdDepartment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourseSubscriber_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="CourseSubscriber" Type="Self.CourseSubscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourseSubscriber">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourseSubscriber_StudentsGroup">
+          <End Role="StudentsGroup" Type="Self.StudentsGroup" Multiplicity="0..1" />
+          <End Role="CourseSubscriber" Type="Self.CourseSubscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentsGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourseSubscriber">
+              <PropertyRef Name="IdGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourseSubscriber_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="CourseSubscriber" Type="Self.CourseSubscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourseSubscriber">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Curs_GradeFormula">
+          <End Role="GradeFormula" Type="Self.GradeFormula" Multiplicity="0..1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GradeFormula">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="IdGradeFormula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_EventType">
+          <End Role="EventType" Type="Self.EventType" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="IdEventType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homework_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Homework">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homework_GroupHomeworkQuestion">
+          <End Role="GroupHomeworkQuestion" Type="Self.GroupHomeworkQuestion" Multiplicity="0..1" />
+          <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupHomeworkQuestion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Homework">
+              <PropertyRef Name="IdGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homework_HomeworkType">
+          <End Role="HomeworkType" Type="Self.HomeworkType" Multiplicity="0..1" />
+          <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HomeworkType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Homework">
+              <PropertyRef Name="IdHomeworkType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homework_Resource">
+          <End Role="Resource" Type="Self.Resource" Multiplicity="0..1" />
+          <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Homework">
+              <PropertyRef Name="IdResource" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homework_TurninType">
+          <End Role="TurninType" Type="Self.TurninType" Multiplicity="0..1" />
+          <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TurninType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Homework">
+              <PropertyRef Name="IdTurninType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ModifyResult_Result">
+          <End Role="Result" Type="Self.Result" Multiplicity="0..1" />
+          <End Role="ModifyResult" Type="Self.ModifyResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Result">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ModifyResult">
+              <PropertyRef Name="IdResult" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ModifyResult_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="ModifyResult" Type="Self.ModifyResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ModifyResult">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NoticeType_DeliveryFrequency">
+          <End Role="DeliveryFrequency" Type="Self.DeliveryFrequency" Multiplicity="0..1" />
+          <End Role="NoticeType" Type="Self.NoticeType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryFrequency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NoticeType">
+              <PropertyRef Name="IdDeliveryFrequency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PageDesign_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="PageDesign" Type="Self.PageDesign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PageDesign">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermissionRole_Permission">
+          <End Role="Permission" Type="Self.Permission" Multiplicity="0..1" />
+          <End Role="PermissionRole" Type="Self.PermissionRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permission">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionRole">
+              <PropertyRef Name="IdPermission" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermissionRole_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="PermissionRole" Type="Self.PermissionRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionRole">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermissionUser_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="PermissionUser" Type="Self.PermissionUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionUser">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermissionUser_Permission">
+          <End Role="Permission" Type="Self.Permission" Multiplicity="0..1" />
+          <End Role="PermissionUser" Type="Self.PermissionUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permission">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionUser">
+              <PropertyRef Name="IdPermission" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermissionUser_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="PermissionUser" Type="Self.PermissionUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionUser">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Post_PostType">
+          <End Role="PostType" Type="Self.PostType" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="IdPostType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Post_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Question_GroupHomeworkQuestion">
+          <End Role="GroupHomeworkQuestion" Type="Self.GroupHomeworkQuestion" Multiplicity="0..1" />
+          <End Role="Question" Type="Self.Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupHomeworkQuestion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Question">
+              <PropertyRef Name="IdGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Question_QuestionType">
+          <End Role="QuestionType" Type="Self.QuestionType" Multiplicity="0..1" />
+          <End Role="Question" Type="Self.Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuestionType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Question">
+              <PropertyRef Name="IdQuestionType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quiz_KeepScoreType">
+          <End Role="KeepScoreType" Type="Self.KeepScoreType" Multiplicity="0..1" />
+          <End Role="Quiz" Type="Self.Quiz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KeepScoreType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Quiz">
+              <PropertyRef Name="IdKeepScoreType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quiz_QuizType">
+          <End Role="QuizType" Type="Self.QuizType" Multiplicity="0..1" />
+          <End Role="Quiz" Type="Self.Quiz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Quiz">
+              <PropertyRef Name="IdQuizType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quiz_StudentsGroup">
+          <End Role="StudentsGroup" Type="Self.StudentsGroup" Multiplicity="0..1" />
+          <End Role="Quiz" Type="Self.Quiz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentsGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Quiz">
+              <PropertyRef Name="IdStudentGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizQuestion_C0urse">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="QuizQuestion" Type="Self.QuizQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizQuestion">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizQuestion_Question">
+          <End Role="Question" Type="Self.Question" Multiplicity="0..1" />
+          <End Role="QuizQuestion" Type="Self.QuizQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizQuestion">
+              <PropertyRef Name="IdQuestion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizQuestion_Quiz">
+          <End Role="Quiz" Type="Self.Quiz" Multiplicity="0..1" />
+          <End Role="QuizQuestion" Type="Self.QuizQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quiz">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizQuestion">
+              <PropertyRef Name="IdQuiz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resource_ResourceCategory">
+          <End Role="ResourceCategory" Type="Self.ResourceCategory" Multiplicity="1" />
+          <End Role="Resource" Type="Self.Resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResourceCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Resource">
+              <PropertyRef Name="IdCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResourcePost_Post">
+          <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+          <End Role="ResourcePost" Type="Self.ResourcePost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ResourcePost">
+              <PropertyRef Name="IdPost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResourcePost_Resource">
+          <End Role="Resource" Type="Self.Resource" Multiplicity="0..1" />
+          <End Role="ResourcePost" Type="Self.ResourcePost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ResourcePost">
+              <PropertyRef Name="IdResource" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SetNotice_DeliveryFrequency">
+          <End Role="DeliveryFrequency" Type="Self.DeliveryFrequency" Multiplicity="0..1" />
+          <End Role="SetNotice" Type="Self.SetNotice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryFrequency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SetNotice">
+              <PropertyRef Name="IdFrequency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SetNotice_NoticeType">
+          <End Role="NoticeType" Type="Self.NoticeType" Multiplicity="0..1" />
+          <End Role="SetNotice" Type="Self.SetNotice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NoticeType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SetNotice">
+              <PropertyRef Name="IdNoticeType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SetNotice_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="SetNotice" Type="Self.SetNotice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SetNotice">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ELearningModelStoreContainer">
+          <EntitySet Name="AuthentificationLog" EntityType="Self.AuthentificationLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Chat" EntityType="Self.Chat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChatCategory" EntityType="Self.ChatCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChatSubscriber" EntityType="Self.ChatSubscriber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChatTopic" EntityType="Self.ChatTopic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommentType" EntityType="Self.CommentType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CourseSubscriber" EntityType="Self.CourseSubscriber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeliveryFrequency" EntityType="Self.DeliveryFrequency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventType" EntityType="Self.EventType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GradeFormula" EntityType="Self.GradeFormula" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupHomeworkQuestion" EntityType="Self.GroupHomeworkQuestion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Homework" EntityType="Self.Homework" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HomeworkType" EntityType="Self.HomeworkType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KeepScoreType" EntityType="Self.KeepScoreType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ModifyResult" EntityType="Self.ModifyResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NoticeType" EntityType="Self.NoticeType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PageDesign" EntityType="Self.PageDesign" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permission" EntityType="Self.Permission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PermissionRole" EntityType="Self.PermissionRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PermissionUser" EntityType="Self.PermissionUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PostType" EntityType="Self.PostType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuestionType" EntityType="Self.QuestionType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Quiz" EntityType="Self.Quiz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuizQuestion" EntityType="Self.QuizQuestion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuizType" EntityType="Self.QuizType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Resource" EntityType="Self.Resource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResourceCategory" EntityType="Self.ResourceCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResourcePost" EntityType="Self.ResourcePost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SetNotice" EntityType="Self.SetNotice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentsGroup" EntityType="Self.StudentsGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TurninType" EntityType="Self.TurninType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AuthentificationLog_User" Association="Self.FK_AuthentificationLog_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="AuthentificationLog" EntitySet="AuthentificationLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Chat_ChatCategory" Association="Self.FK_Chat_ChatCategory">
+            <End Role="ChatCategory" EntitySet="ChatCategory" />
+            <End Role="Chat" EntitySet="Chat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Chat_ChatTopic" Association="Self.FK_Chat_ChatTopic">
+            <End Role="ChatTopic" EntitySet="ChatTopic" />
+            <End Role="Chat" EntitySet="Chat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChatSubscriber_Chat" Association="Self.FK_ChatSubscriber_Chat">
+            <End Role="Chat" EntitySet="Chat" />
+            <End Role="ChatSubscriber" EntitySet="ChatSubscriber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChatSubscriber_User" Association="Self.FK_ChatSubscriber_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ChatSubscriber" EntitySet="ChatSubscriber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_CommentType" Association="Self.FK_Comment_CommentType">
+            <End Role="CommentType" EntitySet="CommentType" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_User" Association="Self.FK_Comment_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Course_Department" Association="Self.FK_Course_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourseSubscriber_Course" Association="Self.FK_CourseSubscriber_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="CourseSubscriber" EntitySet="CourseSubscriber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourseSubscriber_StudentsGroup" Association="Self.FK_CourseSubscriber_StudentsGroup">
+            <End Role="StudentsGroup" EntitySet="StudentsGroup" />
+            <End Role="CourseSubscriber" EntitySet="CourseSubscriber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourseSubscriber_User" Association="Self.FK_CourseSubscriber_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="CourseSubscriber" EntitySet="CourseSubscriber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Curs_GradeFormula" Association="Self.FK_Curs_GradeFormula">
+            <End Role="GradeFormula" EntitySet="GradeFormula" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_Course" Association="Self.FK_Event_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_EventType" Association="Self.FK_Event_EventType">
+            <End Role="EventType" EntitySet="EventType" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_User" Association="Self.FK_Event_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homework_Course" Association="Self.FK_Homework_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Homework" EntitySet="Homework" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homework_GroupHomeworkQuestion" Association="Self.FK_Homework_GroupHomeworkQuestion">
+            <End Role="GroupHomeworkQuestion" EntitySet="GroupHomeworkQuestion" />
+            <End Role="Homework" EntitySet="Homework" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homework_HomeworkType" Association="Self.FK_Homework_HomeworkType">
+            <End Role="HomeworkType" EntitySet="HomeworkType" />
+            <End Role="Homework" EntitySet="Homework" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homework_Resource" Association="Self.FK_Homework_Resource">
+            <End Role="Resource" EntitySet="Resource" />
+            <End Role="Homework" EntitySet="Homework" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homework_TurninType" Association="Self.FK_Homework_TurninType">
+            <End Role="TurninType" EntitySet="TurninType" />
+            <End Role="Homework" EntitySet="Homework" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ModifyResult_Result" Association="Self.FK_ModifyResult_Result">
+            <End Role="Result" EntitySet="Result" />
+            <End Role="ModifyResult" EntitySet="ModifyResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ModifyResult_User" Association="Self.FK_ModifyResult_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ModifyResult" EntitySet="ModifyResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NoticeType_DeliveryFrequency" Association="Self.FK_NoticeType_DeliveryFrequency">
+            <End Role="DeliveryFrequency" EntitySet="DeliveryFrequency" />
+            <End Role="NoticeType" EntitySet="NoticeType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PageDesign_User" Association="Self.FK_PageDesign_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="PageDesign" EntitySet="PageDesign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermissionRole_Permission" Association="Self.FK_PermissionRole_Permission">
+            <End Role="Permission" EntitySet="Permission" />
+            <End Role="PermissionRole" EntitySet="PermissionRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermissionRole_Role" Association="Self.FK_PermissionRole_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="PermissionRole" EntitySet="PermissionRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermissionUser_Course" Association="Self.FK_PermissionUser_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="PermissionUser" EntitySet="PermissionUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermissionUser_Permission" Association="Self.FK_PermissionUser_Permission">
+            <End Role="Permission" EntitySet="Permission" />
+            <End Role="PermissionUser" EntitySet="PermissionUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermissionUser_User" Association="Self.FK_PermissionUser_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="PermissionUser" EntitySet="PermissionUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Post_PostType" Association="Self.FK_Post_PostType">
+            <End Role="PostType" EntitySet="PostType" />
+            <End Role="Post" EntitySet="Post" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Post_User" Association="Self.FK_Post_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Post" EntitySet="Post" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Question_GroupHomeworkQuestion" Association="Self.FK_Question_GroupHomeworkQuestion">
+            <End Role="GroupHomeworkQuestion" EntitySet="GroupHomeworkQuestion" />
+            <End Role="Question" EntitySet="Question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Question_QuestionType" Association="Self.FK_Question_QuestionType">
+            <End Role="QuestionType" EntitySet="QuestionType" />
+            <End Role="Question" EntitySet="Question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quiz_KeepScoreType" Association="Self.FK_Quiz_KeepScoreType">
+            <End Role="KeepScoreType" EntitySet="KeepScoreType" />
+            <End Role="Quiz" EntitySet="Quiz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quiz_QuizType" Association="Self.FK_Quiz_QuizType">
+            <End Role="QuizType" EntitySet="QuizType" />
+            <End Role="Quiz" EntitySet="Quiz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quiz_StudentsGroup" Association="Self.FK_Quiz_StudentsGroup">
+            <End Role="StudentsGroup" EntitySet="StudentsGroup" />
+            <End Role="Quiz" EntitySet="Quiz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizQuestion_C0urse" Association="Self.FK_QuizQuestion_C0urse">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="QuizQuestion" EntitySet="QuizQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizQuestion_Question" Association="Self.FK_QuizQuestion_Question">
+            <End Role="Question" EntitySet="Question" />
+            <End Role="QuizQuestion" EntitySet="QuizQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizQuestion_Quiz" Association="Self.FK_QuizQuestion_Quiz">
+            <End Role="Quiz" EntitySet="Quiz" />
+            <End Role="QuizQuestion" EntitySet="QuizQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resource_ResourceCategory" Association="Self.FK_Resource_ResourceCategory">
+            <End Role="ResourceCategory" EntitySet="ResourceCategory" />
+            <End Role="Resource" EntitySet="Resource" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResourcePost_Post" Association="Self.FK_ResourcePost_Post">
+            <End Role="Post" EntitySet="Post" />
+            <End Role="ResourcePost" EntitySet="ResourcePost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResourcePost_Resource" Association="Self.FK_ResourcePost_Resource">
+            <End Role="Resource" EntitySet="Resource" />
+            <End Role="ResourcePost" EntitySet="ResourcePost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Course" Association="Self.FK_Result_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_User" Association="Self.FK_Result_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SetNotice_DeliveryFrequency" Association="Self.FK_SetNotice_DeliveryFrequency">
+            <End Role="DeliveryFrequency" EntitySet="DeliveryFrequency" />
+            <End Role="SetNotice" EntitySet="SetNotice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SetNotice_NoticeType" Association="Self.FK_SetNotice_NoticeType">
+            <End Role="NoticeType" EntitySet="NoticeType" />
+            <End Role="SetNotice" EntitySet="SetNotice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SetNotice_User" Association="Self.FK_SetNotice_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SetNotice" EntitySet="SetNotice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_Role" Association="Self.FK_UserRole_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_User" Association="Self.FK_UserRole_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ELearningModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AuthentificationLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUser" Type="Int32" />
+          <Property Name="Data" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="User" Relationship="Self.FK_AuthentificationLog_User" FromRole="AuthentificationLog" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Chat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdChatTopic" Type="Int32" />
+          <Property Name="Grade" Type="Int32" />
+          <Property Name="IdChatCategory" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="ChatCategory" Relationship="Self.FK_Chat_ChatCategory" FromRole="Chat" ToRole="ChatCategory" />
+          <NavigationProperty Name="ChatTopic" Relationship="Self.FK_Chat_ChatTopic" FromRole="Chat" ToRole="ChatTopic" />
+          <NavigationProperty Name="ChatSubscribers" Relationship="Self.FK_ChatSubscriber_Chat" FromRole="Chat" ToRole="ChatSubscriber" />
+        </EntityType>
+        <EntityType Name="ChatCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Chats" Relationship="Self.FK_Chat_ChatCategory" FromRole="ChatCategory" ToRole="Chat" />
+        </EntityType>
+        <EntityType Name="ChatSubscriber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdChat" Type="Int32" />
+          <Property Name="IdUser" Type="Int32" />
+          <NavigationProperty Name="Chat" Relationship="Self.FK_ChatSubscriber_Chat" FromRole="ChatSubscriber" ToRole="Chat" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ChatSubscriber_User" FromRole="ChatSubscriber" ToRole="User" />
+        </EntityType>
+        <EntityType Name="ChatTopic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Chats" Relationship="Self.FK_Chat_ChatTopic" FromRole="ChatTopic" ToRole="Chat" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCommentType" Type="Int32" />
+          <Property Name="IdForum" Type="Int32" />
+          <Property Name="IdUser" Type="Int32" />
+          <Property Name="CommentContent" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CommentType" Relationship="Self.FK_Comment_CommentType" FromRole="Comment" ToRole="CommentType" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Comment_User" FromRole="Comment" ToRole="User" />
+        </EntityType>
+        <EntityType Name="CommentType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_CommentType" FromRole="CommentType" ToRole="Comment" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StarDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="IdDepartment" Type="Int32" />
+          <Property Name="IdGradeFormula" Type="Int32" />
+          <Property Name="ContactInfo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CourseBlock" Type="Boolean" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Course_Department" FromRole="Course" ToRole="Department" />
+          <NavigationProperty Name="CourseSubscribers" Relationship="Self.FK_CourseSubscriber_Course" FromRole="Course" ToRole="CourseSubscriber" />
+          <NavigationProperty Name="GradeFormula" Relationship="Self.FK_Curs_GradeFormula" FromRole="Course" ToRole="GradeFormula" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_Event_Course" FromRole="Course" ToRole="Event" />
+          <NavigationProperty Name="Homework" Relationship="Self.FK_Homework_Course" FromRole="Course" ToRole="Homework" />
+          <NavigationProperty Name="PermissionUsers" Relationship="Self.FK_PermissionUser_Course" FromRole="Course" ToRole="PermissionUser" />
+          <NavigationProperty Name="QuizQuestions" Relationship="Self.FK_QuizQuestion_C0urse" FromRole="Course" ToRole="QuizQuestion" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_Result_Course" FromRole="Course" ToRole="Result" />
+        </EntityType>
+        <EntityType Name="CourseSubscriber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUser" Type="Int32" />
+          <Property Name="IdCourse" Type="Int32" />
+          <Property Name="IdGroup" Type="Int32" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_CourseSubscriber_Course" FromRole="CourseSubscriber" ToRole="Course" />
+          <NavigationProperty Name="StudentsGroup" Relationship="Self.FK_CourseSubscriber_StudentsGroup" FromRole="CourseSubscriber" ToRole="StudentsGroup" />
+          <NavigationProperty Name="User" Relationship="Self.FK_CourseSubscriber_User" FromRole="CourseSubscriber" ToRole="User" />
+        </EntityType>
+        <EntityType Name="DeliveryFrequency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NoticeTypes" Relationship="Self.FK_NoticeType_DeliveryFrequency" FromRole="DeliveryFrequency" ToRole="NoticeType" />
+          <NavigationProperty Name="SetNotices" Relationship="Self.FK_SetNotice_DeliveryFrequency" FromRole="DeliveryFrequency" ToRole="SetNotice" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Courses" Relationship="Self.FK_Course_Department" FromRole="Department" ToRole="Course" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCourse" Type="Int32" />
+          <Property Name="IdUser" Type="Int32" />
+          <Property Name="Deadline" Type="DateTime" Precision="0" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IdEventType" Type="Int32" />
+          <Property Name="Syllabus" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_Event_Course" FromRole="Event" ToRole="Course" />
+          <NavigationProperty Name="EventType" Relationship="Self.FK_Event_EventType" FromRole="Event" ToRole="EventType" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Event_User" FromRole="Event" ToRole="User" />
+        </EntityType>
+        <EntityType Name="EventType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_Event_EventType" FromRole="EventType" ToRole="Event" />
+        </EntityType>
+        <EntityType Name="GradeFormula">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HomeworkPercentage" Type="Int32" />
+          <Property Name="QuizPercentage" Type="Int32" />
+          <Property Name="FinalExamPercentage" Type="Int32" />
+          <NavigationProperty Name="Courses" Relationship="Self.FK_Curs_GradeFormula" FromRole="GradeFormula" ToRole="Course" />
+        </EntityType>
+        <EntityType Name="GroupHomeworkQuestion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Homework" Relationship="Self.FK_Homework_GroupHomeworkQuestion" FromRole="GroupHomeworkQuestion" ToRole="Homework" />
+          <NavigationProperty Name="Questions" Relationship="Self.FK_Question_GroupHomeworkQuestion" FromRole="GroupHomeworkQuestion" ToRole="Question" />
+        </EntityType>
+        <EntityType Name="Homework">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdResource" Type="Int32" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="IdGroup" Type="Int32" />
+          <Property Name="IdHomeworkType" Type="Int32" />
+          <Property Name="IdTurninType" Type="Int32" />
+          <Property Name="IdCourse" Type="Int32" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_Homework_Course" FromRole="Homework" ToRole="Course" />
+          <NavigationProperty Name="GroupHomeworkQuestion" Relationship="Self.FK_Homework_GroupHomeworkQuestion" FromRole="Homework" ToRole="GroupHomeworkQuestion" />
+          <NavigationProperty Name="HomeworkType" Relationship="Self.FK_Homework_HomeworkType" FromRole="Homework" ToRole="HomeworkType" />
+          <NavigationProperty Name="Resource" Relationship="Self.FK_Homework_Resource" FromRole="Homework" ToRole="Resource" />
+          <NavigationProperty Name="TurninType" Relationship="Self.FK_Homework_TurninType" FromRole="Homework" ToRole="TurninType" />
+        </EntityType>
+        <EntityType Name="HomeworkType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Homework" Relationship="Self.FK_Homework_HomeworkType" FromRole="HomeworkType" ToRole="Homework" />
+        </EntityType>
+        <EntityType Name="KeepScoreType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Quizs" Relationship="Self.FK_Quiz_KeepScoreType" FromRole="KeepScoreType" ToRole="Quiz" />
+        </EntityType>
+        <EntityType Name="ModifyResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdResult" Type="Int32" />
+          <Property Name="IdUser" Type="Int32" />
+          <Property Name="Data" Type="DateTime" Precision="0" />
+          <Property Name="ModifyGrade" Type="Int32" />
+          <NavigationProperty Name="Result" Relationship="Self.FK_ModifyResult_Result" FromRole="ModifyResult" ToRole="Result" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ModifyResult_User" FromRole="ModifyResult" ToRole="User" />
+        </EntityType>
+        <EntityType Name="NoticeType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdDeliveryFrequency" Type="Int32" />
+          <NavigationProperty Name="DeliveryFrequency" Relationship="Self.FK_NoticeType_DeliveryFrequency" FromRole="NoticeType" ToRole="DeliveryFrequency" />
+          <NavigationProperty Name="SetNotices" Relationship="Self.FK_SetNotice_NoticeType" FromRole="NoticeType" ToRole="SetNotice" />
+        </EntityType>
+        <EntityType Name="PageDesign">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TextSize" Type="Int32" />
+          <Property Name="TextStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TextColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BackgroundColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Alignment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_PageDesign_User" FromRole="PageDesign" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PermissionRoles" Relationship="Self.FK_PermissionRole_Permission" FromRole="Permission" ToRole="PermissionRole" />
+          <NavigationProperty Name="PermissionUsers" Relationship="Self.FK_PermissionUser_Permission" FromRole="Permission" ToRole="PermissionUser" />
+        </EntityType>
+        <EntityType Name="PermissionRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRole" Type="Int32" />
+          <Property Name="IdPermission" Type="Int32" />
+          <NavigationProperty Name="Permission" Relationship="Self.FK_PermissionRole_Permission" FromRole="PermissionRole" ToRole="Permission" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_PermissionRole_Role" FromRole="PermissionRole" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="PermissionUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdCourse" Type="Int32" />
+          <Property Name="IdUser" Type="Int32" />
+          <Property Name="IdPermission" Type="Int32" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_PermissionUser_Course" FromRole="PermissionUser" ToRole="Course" />
+          <NavigationProperty Name="Permission" Relationship="Self.FK_PermissionUser_Permission" FromRole="PermissionUser" ToRole="Permission" />
+          <NavigationProperty Name="User" Relationship="Self.FK_PermissionUser_User" FromRole="PermissionUser" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPostType" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdUser" Type="Int32" />
+          <NavigationProperty Name="PostType" Relationship="Self.FK_Post_PostType" FromRole="Post" ToRole="PostType" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Post_User" FromRole="Post" ToRole="User" />
+          <NavigationProperty Name="ResourcePosts" Relationship="Self.FK_ResourcePost_Post" FromRole="Post" ToRole="ResourcePost" />
+        </EntityType>
+        <EntityType Name="PostType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK_Post_PostType" FromRole="PostType" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="IdGroup" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CorrectAnswer" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IdQuestionType" Type="Int32" />
+          <NavigationProperty Name="GroupHomeworkQuestion" Relationship="Self.FK_Question_GroupHomeworkQuestion" FromRole="Question" ToRole="GroupHomeworkQuestion" />
+          <NavigationProperty Name="QuestionType" Relationship="Self.FK_Question_QuestionType" FromRole="Question" ToRole="QuestionType" />
+          <NavigationProperty Name="QuizQuestions" Relationship="Self.FK_QuizQuestion_Question" FromRole="Question" ToRole="QuizQuestion" />
+        </EntityType>
+        <EntityType Name="QuestionType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Questions" Relationship="Self.FK_Question_QuestionType" FromRole="QuestionType" ToRole="Question" />
+        </EntityType>
+        <EntityType Name="Quiz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Deadline" Type="DateTime" Precision="0" />
+          <Property Name="IdQuizType" Type="Int32" />
+          <Property Name="IdStudentGroup" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="CompletionDeadline" Type="Int32" />
+          <Property Name="MaximumNumberOfAttempts" Type="Int32" />
+          <Property Name="IdKeepScoreType" Type="Int32" />
+          <Property Name="DisplayPersonalAnswer" Type="Int32" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IPAdress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="KeepScoreType" Relationship="Self.FK_Quiz_KeepScoreType" FromRole="Quiz" ToRole="KeepScoreType" />
+          <NavigationProperty Name="QuizType" Relationship="Self.FK_Quiz_QuizType" FromRole="Quiz" ToRole="QuizType" />
+          <NavigationProperty Name="StudentsGroup" Relationship="Self.FK_Quiz_StudentsGroup" FromRole="Quiz" ToRole="StudentsGroup" />
+          <NavigationProperty Name="QuizQuestions" Relationship="Self.FK_QuizQuestion_Quiz" FromRole="Quiz" ToRole="QuizQuestion" />
+        </EntityType>
+        <EntityType Name="QuizQuestion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdQuestion" Type="Int32" />
+          <Property Name="IdQuiz" Type="Int32" />
+          <Property Name="IdCourse" Type="Int32" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_QuizQuestion_C0urse" FromRole="QuizQuestion" ToRole="Course" />
+          <NavigationProperty Name="Question" Relationship="Self.FK_QuizQuestion_Question" FromRole="QuizQuestion" ToRole="Question" />
+          <NavigationProperty Name="Quiz" Relationship="Self.FK_QuizQuestion_Quiz" FromRole="QuizQuestion" ToRole="Quiz" />
+        </EntityType>
+        <EntityType Name="QuizType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Quizs" Relationship="Self.FK_Quiz_QuizType" FromRole="QuizType" ToRole="Quiz" />
+        </EntityType>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdCategory" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Homework" Relationship="Self.FK_Homework_Resource" FromRole="Resource" ToRole="Homework" />
+          <NavigationProperty Name="ResourceCategory" Relationship="Self.FK_Resource_ResourceCategory" FromRole="Resource" ToRole="ResourceCategory" />
+          <NavigationProperty Name="ResourcePosts" Relationship="Self.FK_ResourcePost_Resource" FromRole="Resource" ToRole="ResourcePost" />
+        </EntityType>
+        <EntityType Name="ResourceCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Resources" Relationship="Self.FK_Resource_ResourceCategory" FromRole="ResourceCategory" ToRole="Resource" />
+        </EntityType>
+        <EntityType Name="ResourcePost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdResource" Type="Int32" />
+          <Property Name="IdPost" Type="Int32" />
+          <NavigationProperty Name="Post" Relationship="Self.FK_ResourcePost_Post" FromRole="ResourcePost" ToRole="Post" />
+          <NavigationProperty Name="Resource" Relationship="Self.FK_ResourcePost_Resource" FromRole="ResourcePost" ToRole="Resource" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUser" Type="Int32" />
+          <Property Name="IdCourse" Type="Int32" />
+          <Property Name="HomeworkGrade" Type="Int32" />
+          <Property Name="QuizGrade" Type="Int32" />
+          <Property Name="ExamGrade" Type="Int32" />
+          <Property Name="FinalGrade" Type="Int32" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_Result_Course" FromRole="Result" ToRole="Course" />
+          <NavigationProperty Name="ModifyResults" Relationship="Self.FK_ModifyResult_Result" FromRole="Result" ToRole="ModifyResult" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Result_User" FromRole="Result" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PermissionRoles" Relationship="Self.FK_PermissionRole_Role" FromRole="Role" ToRole="PermissionRole" />
+          <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRole_Role" FromRole="Role" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="SetNotice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUser" Type="Int32" />
+          <Property Name="IdNoticeType" Type="Int32" />
+          <Property Name="IdFrequency" Type="Int32" />
+          <NavigationProperty Name="DeliveryFrequency" Relationship="Self.FK_SetNotice_DeliveryFrequency" FromRole="SetNotice" ToRole="DeliveryFrequency" />
+          <NavigationProperty Name="NoticeType" Relationship="Self.FK_SetNotice_NoticeType" FromRole="SetNotice" ToRole="NoticeType" />
+          <NavigationProperty Name="User" Relationship="Self.FK_SetNotice_User" FromRole="SetNotice" ToRole="User" />
+        </EntityType>
+        <EntityType Name="StudentsGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CourseSubscribers" Relationship="Self.FK_CourseSubscriber_StudentsGroup" FromRole="StudentsGroup" ToRole="CourseSubscriber" />
+          <NavigationProperty Name="Quizs" Relationship="Self.FK_Quiz_StudentsGroup" FromRole="StudentsGroup" ToRole="Quiz" />
+        </EntityType>
+        <EntityType Name="TurninType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="Int32" />
+          <NavigationProperty Name="Homework" Relationship="Self.FK_Homework_TurninType" FromRole="TurninType" ToRole="Homework" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AuthentificationLogs" Relationship="Self.FK_AuthentificationLog_User" FromRole="User" ToRole="AuthentificationLog" />
+          <NavigationProperty Name="ChatSubscribers" Relationship="Self.FK_ChatSubscriber_User" FromRole="User" ToRole="ChatSubscriber" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_User" FromRole="User" ToRole="Comment" />
+          <NavigationProperty Name="CourseSubscribers" Relationship="Self.FK_CourseSubscriber_User" FromRole="User" ToRole="CourseSubscriber" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_Event_User" FromRole="User" ToRole="Event" />
+          <NavigationProperty Name="ModifyResults" Relationship="Self.FK_ModifyResult_User" FromRole="User" ToRole="ModifyResult" />
+          <NavigationProperty Name="PageDesigns" Relationship="Self.FK_PageDesign_User" FromRole="User" ToRole="PageDesign" />
+          <NavigationProperty Name="PermissionUsers" Relationship="Self.FK_PermissionUser_User" FromRole="User" ToRole="PermissionUser" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK_Post_User" FromRole="User" ToRole="Post" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_Result_User" FromRole="User" ToRole="Result" />
+          <NavigationProperty Name="SetNotices" Relationship="Self.FK_SetNotice_User" FromRole="User" ToRole="SetNotice" />
+          <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRole_User" FromRole="User" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdRole" Type="Int32" />
+          <Property Name="IdUser" Type="Int32" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_UserRole_Role" FromRole="UserRole" ToRole="Role" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserRole_User" FromRole="UserRole" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_AuthentificationLog_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="AuthentificationLog" Type="Self.AuthentificationLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AuthentificationLog">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Chat_ChatCategory">
+          <End Role="ChatCategory" Type="Self.ChatCategory" Multiplicity="0..1" />
+          <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChatCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chat">
+              <PropertyRef Name="IdChatCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Chat_ChatTopic">
+          <End Role="ChatTopic" Type="Self.ChatTopic" Multiplicity="0..1" />
+          <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChatTopic">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Chat">
+              <PropertyRef Name="IdChatTopic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChatSubscriber_Chat">
+          <End Role="Chat" Type="Self.Chat" Multiplicity="0..1" />
+          <End Role="ChatSubscriber" Type="Self.ChatSubscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChatSubscriber">
+              <PropertyRef Name="IdChat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChatSubscriber_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="ChatSubscriber" Type="Self.ChatSubscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChatSubscriber">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_CommentType">
+          <End Role="CommentType" Type="Self.CommentType" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommentType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="IdCommentType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Course_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="IdDepartment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourseSubscriber_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="CourseSubscriber" Type="Self.CourseSubscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourseSubscriber">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Curs_GradeFormula">
+          <End Role="GradeFormula" Type="Self.GradeFormula" Multiplicity="0..1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GradeFormula">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="IdGradeFormula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homework_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Homework">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermissionUser_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="PermissionUser" Type="Self.PermissionUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionUser">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizQuestion_C0urse">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="QuizQuestion" Type="Self.QuizQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizQuestion">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="IdCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourseSubscriber_StudentsGroup">
+          <End Role="StudentsGroup" Type="Self.StudentsGroup" Multiplicity="0..1" />
+          <End Role="CourseSubscriber" Type="Self.CourseSubscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentsGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourseSubscriber">
+              <PropertyRef Name="IdGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourseSubscriber_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="CourseSubscriber" Type="Self.CourseSubscriber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourseSubscriber">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NoticeType_DeliveryFrequency">
+          <End Role="DeliveryFrequency" Type="Self.DeliveryFrequency" Multiplicity="0..1" />
+          <End Role="NoticeType" Type="Self.NoticeType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryFrequency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NoticeType">
+              <PropertyRef Name="IdDeliveryFrequency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SetNotice_DeliveryFrequency">
+          <End Role="DeliveryFrequency" Type="Self.DeliveryFrequency" Multiplicity="0..1" />
+          <End Role="SetNotice" Type="Self.SetNotice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryFrequency">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SetNotice">
+              <PropertyRef Name="IdFrequency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_EventType">
+          <End Role="EventType" Type="Self.EventType" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="IdEventType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homework_GroupHomeworkQuestion">
+          <End Role="GroupHomeworkQuestion" Type="Self.GroupHomeworkQuestion" Multiplicity="0..1" />
+          <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupHomeworkQuestion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Homework">
+              <PropertyRef Name="IdGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Question_GroupHomeworkQuestion">
+          <End Role="GroupHomeworkQuestion" Type="Self.GroupHomeworkQuestion" Multiplicity="0..1" />
+          <End Role="Question" Type="Self.Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupHomeworkQuestion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Question">
+              <PropertyRef Name="IdGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homework_HomeworkType">
+          <End Role="HomeworkType" Type="Self.HomeworkType" Multiplicity="0..1" />
+          <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HomeworkType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Homework">
+              <PropertyRef Name="IdHomeworkType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homework_Resource">
+          <End Role="Resource" Type="Self.Resource" Multiplicity="0..1" />
+          <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Homework">
+              <PropertyRef Name="IdResource" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homework_TurninType">
+          <End Role="TurninType" Type="Self.TurninType" Multiplicity="0..1" />
+          <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TurninType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Homework">
+              <PropertyRef Name="IdTurninType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quiz_KeepScoreType">
+          <End Role="KeepScoreType" Type="Self.KeepScoreType" Multiplicity="0..1" />
+          <End Role="Quiz" Type="Self.Quiz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KeepScoreType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Quiz">
+              <PropertyRef Name="IdKeepScoreType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ModifyResult_Result">
+          <End Role="Result" Type="Self.Result" Multiplicity="0..1" />
+          <End Role="ModifyResult" Type="Self.ModifyResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Result">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ModifyResult">
+              <PropertyRef Name="IdResult" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ModifyResult_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="ModifyResult" Type="Self.ModifyResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ModifyResult">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SetNotice_NoticeType">
+          <End Role="NoticeType" Type="Self.NoticeType" Multiplicity="0..1" />
+          <End Role="SetNotice" Type="Self.SetNotice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NoticeType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SetNotice">
+              <PropertyRef Name="IdNoticeType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PageDesign_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="PageDesign" Type="Self.PageDesign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PageDesign">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermissionRole_Permission">
+          <End Role="Permission" Type="Self.Permission" Multiplicity="0..1" />
+          <End Role="PermissionRole" Type="Self.PermissionRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permission">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionRole">
+              <PropertyRef Name="IdPermission" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermissionUser_Permission">
+          <End Role="Permission" Type="Self.Permission" Multiplicity="0..1" />
+          <End Role="PermissionUser" Type="Self.PermissionUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permission">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionUser">
+              <PropertyRef Name="IdPermission" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermissionRole_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="PermissionRole" Type="Self.PermissionRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionRole">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermissionUser_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="PermissionUser" Type="Self.PermissionUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionUser">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Post_PostType">
+          <End Role="PostType" Type="Self.PostType" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="IdPostType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Post_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Post" Type="Self.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResourcePost_Post">
+          <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+          <End Role="ResourcePost" Type="Self.ResourcePost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ResourcePost">
+              <PropertyRef Name="IdPost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Question_QuestionType">
+          <End Role="QuestionType" Type="Self.QuestionType" Multiplicity="0..1" />
+          <End Role="Question" Type="Self.Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuestionType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Question">
+              <PropertyRef Name="IdQuestionType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizQuestion_Question">
+          <End Role="Question" Type="Self.Question" Multiplicity="0..1" />
+          <End Role="QuizQuestion" Type="Self.QuizQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizQuestion">
+              <PropertyRef Name="IdQuestion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quiz_QuizType">
+          <End Role="QuizType" Type="Self.QuizType" Multiplicity="0..1" />
+          <End Role="Quiz" Type="Self.Quiz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuizType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Quiz">
+              <PropertyRef Name="IdQuizType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quiz_StudentsGroup">
+          <End Role="StudentsGroup" Type="Self.StudentsGroup" Multiplicity="0..1" />
+          <End Role="Quiz" Type="Self.Quiz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentsGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Quiz">
+              <PropertyRef Name="IdStudentGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizQuestion_Quiz">
+          <End Role="Quiz" Type="Self.Quiz" Multiplicity="0..1" />
+          <End Role="QuizQuestion" Type="Self.QuizQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quiz">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="QuizQuestion">
+              <PropertyRef Name="IdQuiz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resource_ResourceCategory">
+          <End Role="ResourceCategory" Type="Self.ResourceCategory" Multiplicity="1" />
+          <End Role="Resource" Type="Self.Resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResourceCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Resource">
+              <PropertyRef Name="IdCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResourcePost_Resource">
+          <End Role="Resource" Type="Self.Resource" Multiplicity="0..1" />
+          <End Role="ResourcePost" Type="Self.ResourcePost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resource">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ResourcePost">
+              <PropertyRef Name="IdResource" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SetNotice_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="SetNotice" Type="Self.SetNotice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SetNotice">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ELearningContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AuthentificationLogs" EntityType="Self.AuthentificationLog" />
+          <EntitySet Name="Chats" EntityType="Self.Chat" />
+          <EntitySet Name="ChatCategories" EntityType="Self.ChatCategory" />
+          <EntitySet Name="ChatSubscribers" EntityType="Self.ChatSubscriber" />
+          <EntitySet Name="ChatTopics" EntityType="Self.ChatTopic" />
+          <EntitySet Name="Comments" EntityType="Self.Comment" />
+          <EntitySet Name="CommentTypes" EntityType="Self.CommentType" />
+          <EntitySet Name="Courses" EntityType="Self.Course" />
+          <EntitySet Name="CourseSubscribers" EntityType="Self.CourseSubscriber" />
+          <EntitySet Name="DeliveryFrequencies" EntityType="Self.DeliveryFrequency" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Events" EntityType="Self.Event" />
+          <EntitySet Name="EventTypes" EntityType="Self.EventType" />
+          <EntitySet Name="GradeFormulas" EntityType="Self.GradeFormula" />
+          <EntitySet Name="GroupHomeworkQuestions" EntityType="Self.GroupHomeworkQuestion" />
+          <EntitySet Name="Homework" EntityType="Self.Homework" />
+          <EntitySet Name="HomeworkTypes" EntityType="Self.HomeworkType" />
+          <EntitySet Name="KeepScoreTypes" EntityType="Self.KeepScoreType" />
+          <EntitySet Name="ModifyResults" EntityType="Self.ModifyResult" />
+          <EntitySet Name="NoticeTypes" EntityType="Self.NoticeType" />
+          <EntitySet Name="PageDesigns" EntityType="Self.PageDesign" />
+          <EntitySet Name="Permissions" EntityType="Self.Permission" />
+          <EntitySet Name="PermissionRoles" EntityType="Self.PermissionRole" />
+          <EntitySet Name="PermissionUsers" EntityType="Self.PermissionUser" />
+          <EntitySet Name="Posts" EntityType="Self.Post" />
+          <EntitySet Name="PostTypes" EntityType="Self.PostType" />
+          <EntitySet Name="Questions" EntityType="Self.Question" />
+          <EntitySet Name="QuestionTypes" EntityType="Self.QuestionType" />
+          <EntitySet Name="Quizs" EntityType="Self.Quiz" />
+          <EntitySet Name="QuizQuestions" EntityType="Self.QuizQuestion" />
+          <EntitySet Name="QuizTypes" EntityType="Self.QuizType" />
+          <EntitySet Name="Resources" EntityType="Self.Resource" />
+          <EntitySet Name="ResourceCategories" EntityType="Self.ResourceCategory" />
+          <EntitySet Name="ResourcePosts" EntityType="Self.ResourcePost" />
+          <EntitySet Name="Results" EntityType="Self.Result" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="SetNotices" EntityType="Self.SetNotice" />
+          <EntitySet Name="StudentsGroups" EntityType="Self.StudentsGroup" />
+          <EntitySet Name="TurninTypes" EntityType="Self.TurninType" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+          <AssociationSet Name="FK_AuthentificationLog_User" Association="Self.FK_AuthentificationLog_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="AuthentificationLog" EntitySet="AuthentificationLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Chat_ChatCategory" Association="Self.FK_Chat_ChatCategory">
+            <End Role="ChatCategory" EntitySet="ChatCategories" />
+            <End Role="Chat" EntitySet="Chats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Chat_ChatTopic" Association="Self.FK_Chat_ChatTopic">
+            <End Role="ChatTopic" EntitySet="ChatTopics" />
+            <End Role="Chat" EntitySet="Chats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChatSubscriber_Chat" Association="Self.FK_ChatSubscriber_Chat">
+            <End Role="Chat" EntitySet="Chats" />
+            <End Role="ChatSubscriber" EntitySet="ChatSubscribers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChatSubscriber_User" Association="Self.FK_ChatSubscriber_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ChatSubscriber" EntitySet="ChatSubscribers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_CommentType" Association="Self.FK_Comment_CommentType">
+            <End Role="CommentType" EntitySet="CommentTypes" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_User" Association="Self.FK_Comment_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Course_Department" Association="Self.FK_Course_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourseSubscriber_Course" Association="Self.FK_CourseSubscriber_Course">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="CourseSubscriber" EntitySet="CourseSubscribers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Curs_GradeFormula" Association="Self.FK_Curs_GradeFormula">
+            <End Role="GradeFormula" EntitySet="GradeFormulas" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_Course" Association="Self.FK_Event_Course">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homework_Course" Association="Self.FK_Homework_Course">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="Homework" EntitySet="Homework" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermissionUser_Course" Association="Self.FK_PermissionUser_Course">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="PermissionUser" EntitySet="PermissionUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizQuestion_C0urse" Association="Self.FK_QuizQuestion_C0urse">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="QuizQuestion" EntitySet="QuizQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Course" Association="Self.FK_Result_Course">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="Result" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourseSubscriber_StudentsGroup" Association="Self.FK_CourseSubscriber_StudentsGroup">
+            <End Role="StudentsGroup" EntitySet="StudentsGroups" />
+            <End Role="CourseSubscriber" EntitySet="CourseSubscribers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourseSubscriber_User" Association="Self.FK_CourseSubscriber_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="CourseSubscriber" EntitySet="CourseSubscribers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NoticeType_DeliveryFrequency" Association="Self.FK_NoticeType_DeliveryFrequency">
+            <End Role="DeliveryFrequency" EntitySet="DeliveryFrequencies" />
+            <End Role="NoticeType" EntitySet="NoticeTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SetNotice_DeliveryFrequency" Association="Self.FK_SetNotice_DeliveryFrequency">
+            <End Role="DeliveryFrequency" EntitySet="DeliveryFrequencies" />
+            <End Role="SetNotice" EntitySet="SetNotices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_EventType" Association="Self.FK_Event_EventType">
+            <End Role="EventType" EntitySet="EventTypes" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_User" Association="Self.FK_Event_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homework_GroupHomeworkQuestion" Association="Self.FK_Homework_GroupHomeworkQuestion">
+            <End Role="GroupHomeworkQuestion" EntitySet="GroupHomeworkQuestions" />
+            <End Role="Homework" EntitySet="Homework" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Question_GroupHomeworkQuestion" Association="Self.FK_Question_GroupHomeworkQuestion">
+            <End Role="GroupHomeworkQuestion" EntitySet="GroupHomeworkQuestions" />
+            <End Role="Question" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homework_HomeworkType" Association="Self.FK_Homework_HomeworkType">
+            <End Role="HomeworkType" EntitySet="HomeworkTypes" />
+            <End Role="Homework" EntitySet="Homework" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homework_Resource" Association="Self.FK_Homework_Resource">
+            <End Role="Resource" EntitySet="Resources" />
+            <End Role="Homework" EntitySet="Homework" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homework_TurninType" Association="Self.FK_Homework_TurninType">
+            <End Role="TurninType" EntitySet="TurninTypes" />
+            <End Role="Homework" EntitySet="Homework" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quiz_KeepScoreType" Association="Self.FK_Quiz_KeepScoreType">
+            <End Role="KeepScoreType" EntitySet="KeepScoreTypes" />
+            <End Role="Quiz" EntitySet="Quizs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ModifyResult_Result" Association="Self.FK_ModifyResult_Result">
+            <End Role="Result" EntitySet="Results" />
+            <End Role="ModifyResult" EntitySet="ModifyResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ModifyResult_User" Association="Self.FK_ModifyResult_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ModifyResult" EntitySet="ModifyResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SetNotice_NoticeType" Association="Self.FK_SetNotice_NoticeType">
+            <End Role="NoticeType" EntitySet="NoticeTypes" />
+            <End Role="SetNotice" EntitySet="SetNotices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PageDesign_User" Association="Self.FK_PageDesign_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="PageDesign" EntitySet="PageDesigns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermissionRole_Permission" Association="Self.FK_PermissionRole_Permission">
+            <End Role="Permission" EntitySet="Permissions" />
+            <End Role="PermissionRole" EntitySet="PermissionRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermissionUser_Permission" Association="Self.FK_PermissionUser_Permission">
+            <End Role="Permission" EntitySet="Permissions" />
+            <End Role="PermissionUser" EntitySet="PermissionUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermissionRole_Role" Association="Self.FK_PermissionRole_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="PermissionRole" EntitySet="PermissionRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermissionUser_User" Association="Self.FK_PermissionUser_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="PermissionUser" EntitySet="PermissionUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Post_PostType" Association="Self.FK_Post_PostType">
+            <End Role="PostType" EntitySet="PostTypes" />
+            <End Role="Post" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Post_User" Association="Self.FK_Post_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Post" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResourcePost_Post" Association="Self.FK_ResourcePost_Post">
+            <End Role="Post" EntitySet="Posts" />
+            <End Role="ResourcePost" EntitySet="ResourcePosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Question_QuestionType" Association="Self.FK_Question_QuestionType">
+            <End Role="QuestionType" EntitySet="QuestionTypes" />
+            <End Role="Question" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizQuestion_Question" Association="Self.FK_QuizQuestion_Question">
+            <End Role="Question" EntitySet="Questions" />
+            <End Role="QuizQuestion" EntitySet="QuizQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quiz_QuizType" Association="Self.FK_Quiz_QuizType">
+            <End Role="QuizType" EntitySet="QuizTypes" />
+            <End Role="Quiz" EntitySet="Quizs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quiz_StudentsGroup" Association="Self.FK_Quiz_StudentsGroup">
+            <End Role="StudentsGroup" EntitySet="StudentsGroups" />
+            <End Role="Quiz" EntitySet="Quizs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizQuestion_Quiz" Association="Self.FK_QuizQuestion_Quiz">
+            <End Role="Quiz" EntitySet="Quizs" />
+            <End Role="QuizQuestion" EntitySet="QuizQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resource_ResourceCategory" Association="Self.FK_Resource_ResourceCategory">
+            <End Role="ResourceCategory" EntitySet="ResourceCategories" />
+            <End Role="Resource" EntitySet="Resources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResourcePost_Resource" Association="Self.FK_ResourcePost_Resource">
+            <End Role="Resource" EntitySet="Resources" />
+            <End Role="ResourcePost" EntitySet="ResourcePosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_User" Association="Self.FK_Result_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Result" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_Role" Association="Self.FK_UserRole_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="UserRole" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SetNotice_User" Association="Self.FK_SetNotice_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="SetNotice" EntitySet="SetNotices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_User" Association="Self.FK_UserRole_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserRole" EntitySet="UserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ELearningModelStoreContainer" CdmEntityContainer="ELearningContext">
+          <EntitySetMapping Name="AuthentificationLogs">
+            <EntityTypeMapping TypeName="ELearningModel.AuthentificationLog">
+              <MappingFragment StoreEntitySet="AuthentificationLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Chats">
+            <EntityTypeMapping TypeName="ELearningModel.Chat">
+              <MappingFragment StoreEntitySet="Chat">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdChatTopic" ColumnName="IdChatTopic" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="IdChatCategory" ColumnName="IdChatCategory" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChatCategories">
+            <EntityTypeMapping TypeName="ELearningModel.ChatCategory">
+              <MappingFragment StoreEntitySet="ChatCategory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChatSubscribers">
+            <EntityTypeMapping TypeName="ELearningModel.ChatSubscriber">
+              <MappingFragment StoreEntitySet="ChatSubscriber">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdChat" ColumnName="IdChat" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChatTopics">
+            <EntityTypeMapping TypeName="ELearningModel.ChatTopic">
+              <MappingFragment StoreEntitySet="ChatTopic">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="ELearningModel.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdCommentType" ColumnName="IdCommentType" />
+                <ScalarProperty Name="IdForum" ColumnName="IdForum" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="CommentContent" ColumnName="CommentContent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommentTypes">
+            <EntityTypeMapping TypeName="ELearningModel.CommentType">
+              <MappingFragment StoreEntitySet="CommentType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="ELearningModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="StarDate" ColumnName="StarDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="IdDepartment" ColumnName="IdDepartment" />
+                <ScalarProperty Name="IdGradeFormula" ColumnName="IdGradeFormula" />
+                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+                <ScalarProperty Name="CourseBlock" ColumnName="CourseBlock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseSubscribers">
+            <EntityTypeMapping TypeName="ELearningModel.CourseSubscriber">
+              <MappingFragment StoreEntitySet="CourseSubscriber">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="IdCourse" ColumnName="IdCourse" />
+                <ScalarProperty Name="IdGroup" ColumnName="IdGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeliveryFrequencies">
+            <EntityTypeMapping TypeName="ELearningModel.DeliveryFrequency">
+              <MappingFragment StoreEntitySet="DeliveryFrequency">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="ELearningModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="ELearningModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdCourse" ColumnName="IdCourse" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IdEventType" ColumnName="IdEventType" />
+                <ScalarProperty Name="Syllabus" ColumnName="Syllabus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventTypes">
+            <EntityTypeMapping TypeName="ELearningModel.EventType">
+              <MappingFragment StoreEntitySet="EventType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GradeFormulas">
+            <EntityTypeMapping TypeName="ELearningModel.GradeFormula">
+              <MappingFragment StoreEntitySet="GradeFormula">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HomeworkPercentage" ColumnName="HomeworkPercentage" />
+                <ScalarProperty Name="QuizPercentage" ColumnName="QuizPercentage" />
+                <ScalarProperty Name="FinalExamPercentage" ColumnName="FinalExamPercentage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupHomeworkQuestions">
+            <EntityTypeMapping TypeName="ELearningModel.GroupHomeworkQuestion">
+              <MappingFragment StoreEntitySet="GroupHomeworkQuestion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Homework">
+            <EntityTypeMapping TypeName="ELearningModel.Homework">
+              <MappingFragment StoreEntitySet="Homework">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdResource" ColumnName="IdResource" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="IdGroup" ColumnName="IdGroup" />
+                <ScalarProperty Name="IdHomeworkType" ColumnName="IdHomeworkType" />
+                <ScalarProperty Name="IdTurninType" ColumnName="IdTurninType" />
+                <ScalarProperty Name="IdCourse" ColumnName="IdCourse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HomeworkTypes">
+            <EntityTypeMapping TypeName="ELearningModel.HomeworkType">
+              <MappingFragment StoreEntitySet="HomeworkType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KeepScoreTypes">
+            <EntityTypeMapping TypeName="ELearningModel.KeepScoreType">
+              <MappingFragment StoreEntitySet="KeepScoreType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ModifyResults">
+            <EntityTypeMapping TypeName="ELearningModel.ModifyResult">
+              <MappingFragment StoreEntitySet="ModifyResult">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdResult" ColumnName="IdResult" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="ModifyGrade" ColumnName="ModifyGrade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NoticeTypes">
+            <EntityTypeMapping TypeName="ELearningModel.NoticeType">
+              <MappingFragment StoreEntitySet="NoticeType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdDeliveryFrequency" ColumnName="IdDeliveryFrequency" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PageDesigns">
+            <EntityTypeMapping TypeName="ELearningModel.PageDesign">
+              <MappingFragment StoreEntitySet="PageDesign">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TextSize" ColumnName="TextSize" />
+                <ScalarProperty Name="TextStyle" ColumnName="TextStyle" />
+                <ScalarProperty Name="TextColor" ColumnName="TextColor" />
+                <ScalarProperty Name="BackgroundColor" ColumnName="BackgroundColor" />
+                <ScalarProperty Name="Alignment" ColumnName="Alignment" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions">
+            <EntityTypeMapping TypeName="ELearningModel.Permission">
+              <MappingFragment StoreEntitySet="Permission">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermissionRoles">
+            <EntityTypeMapping TypeName="ELearningModel.PermissionRole">
+              <MappingFragment StoreEntitySet="PermissionRole">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="IdPermission" ColumnName="IdPermission" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermissionUsers">
+            <EntityTypeMapping TypeName="ELearningModel.PermissionUser">
+              <MappingFragment StoreEntitySet="PermissionUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdCourse" ColumnName="IdCourse" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="IdPermission" ColumnName="IdPermission" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="ELearningModel.Post">
+              <MappingFragment StoreEntitySet="Post">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdPostType" ColumnName="IdPostType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PostTypes">
+            <EntityTypeMapping TypeName="ELearningModel.PostType">
+              <MappingFragment StoreEntitySet="PostType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="ELearningModel.Question">
+              <MappingFragment StoreEntitySet="Question">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="IdGroup" ColumnName="IdGroup" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CorrectAnswer" ColumnName="CorrectAnswer" />
+                <ScalarProperty Name="IdQuestionType" ColumnName="IdQuestionType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionTypes">
+            <EntityTypeMapping TypeName="ELearningModel.QuestionType">
+              <MappingFragment StoreEntitySet="QuestionType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quizs">
+            <EntityTypeMapping TypeName="ELearningModel.Quiz">
+              <MappingFragment StoreEntitySet="Quiz">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+                <ScalarProperty Name="IdQuizType" ColumnName="IdQuizType" />
+                <ScalarProperty Name="IdStudentGroup" ColumnName="IdStudentGroup" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="CompletionDeadline" ColumnName="CompletionDeadline" />
+                <ScalarProperty Name="MaximumNumberOfAttempts" ColumnName="MaximumNumberOfAttempts" />
+                <ScalarProperty Name="IdKeepScoreType" ColumnName="IdKeepScoreType" />
+                <ScalarProperty Name="DisplayPersonalAnswer" ColumnName="DisplayPersonalAnswer" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IPAdress" ColumnName="IPAdress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuizQuestions">
+            <EntityTypeMapping TypeName="ELearningModel.QuizQuestion">
+              <MappingFragment StoreEntitySet="QuizQuestion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
+                <ScalarProperty Name="IdQuiz" ColumnName="IdQuiz" />
+                <ScalarProperty Name="IdCourse" ColumnName="IdCourse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuizTypes">
+            <EntityTypeMapping TypeName="ELearningModel.QuizType">
+              <MappingFragment StoreEntitySet="QuizType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resources">
+            <EntityTypeMapping TypeName="ELearningModel.Resource">
+              <MappingFragment StoreEntitySet="Resource">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdCategory" ColumnName="IdCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResourceCategories">
+            <EntityTypeMapping TypeName="ELearningModel.ResourceCategory">
+              <MappingFragment StoreEntitySet="ResourceCategory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResourcePosts">
+            <EntityTypeMapping TypeName="ELearningModel.ResourcePost">
+              <MappingFragment StoreEntitySet="ResourcePost">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdResource" ColumnName="IdResource" />
+                <ScalarProperty Name="IdPost" ColumnName="IdPost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="ELearningModel.Result">
+              <MappingFragment StoreEntitySet="Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="IdCourse" ColumnName="IdCourse" />
+                <ScalarProperty Name="HomeworkGrade" ColumnName="HomeworkGrade" />
+                <ScalarProperty Name="QuizGrade" ColumnName="QuizGrade" />
+                <ScalarProperty Name="ExamGrade" ColumnName="ExamGrade" />
+                <ScalarProperty Name="FinalGrade" ColumnName="FinalGrade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="ELearningModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SetNotices">
+            <EntityTypeMapping TypeName="ELearningModel.SetNotice">
+              <MappingFragment StoreEntitySet="SetNotice">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="IdNoticeType" ColumnName="IdNoticeType" />
+                <ScalarProperty Name="IdFrequency" ColumnName="IdFrequency" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentsGroups">
+            <EntityTypeMapping TypeName="ELearningModel.StudentsGroup">
+              <MappingFragment StoreEntitySet="StudentsGroup">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TurninTypes">
+            <EntityTypeMapping TypeName="ELearningModel.TurninType">
+              <MappingFragment StoreEntitySet="TurninType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ELearningModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="ELearningModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

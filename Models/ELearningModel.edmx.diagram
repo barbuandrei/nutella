@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a5545d0bdfad46bdb44c4ab89a88f4b9" Name="Diagram1">
+        <EntityTypeShape EntityType="ELearningModel.AuthentificationLog" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Chat" Width="1.5" PointX="0.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.ChatCategory" Width="1.5" PointX="1.5" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.ChatSubscriber" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.ChatTopic" Width="1.5" PointX="1.5" PointY="40.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Comment" Width="1.5" PointX="6" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.CommentType" Width="1.5" PointX="3.75" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Course" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.CourseSubscriber" Width="1.5" PointX="3" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.DeliveryFrequency" Width="1.5" PointX="6.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Department" Width="1.5" PointX="1.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Event" Width="1.5" PointX="6" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.EventType" Width="1.5" PointX="3.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.GradeFormula" Width="1.5" PointX="1.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.GroupHomeworkQuestion" Width="1.5" PointX="3.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Homework" Width="1.5" PointX="11.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.HomeworkType" Width="1.5" PointX="9" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.KeepScoreType" Width="1.5" PointX="3.75" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.ModifyResult" Width="1.5" PointX="6" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.NoticeType" Width="1.5" PointX="6.75" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.PageDesign" Width="1.5" PointX="3" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Permission" Width="1.5" PointX="0.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.PermissionRole" Width="1.5" PointX="4" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.PermissionUser" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Post" Width="1.5" PointX="9" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.PostType" Width="1.5" PointX="6.75" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Question" Width="1.5" PointX="6" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.QuestionType" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Quiz" Width="1.5" PointX="6" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.QuizQuestion" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.QuizType" Width="1.5" PointX="3.75" PointY="43.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Resource" Width="1.5" PointX="9" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.ResourceCategory" Width="1.5" PointX="6.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.ResourcePost" Width="1.5" PointX="11.25" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Result" Width="1.5" PointX="9" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.Role" Width="1.5" PointX="0.75" PointY="43.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.SetNotice" Width="1.5" PointX="9" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.StudentsGroup" Width="1.5" PointX="0.75" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.TurninType" Width="1.5" PointX="9" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.User" Width="1.5" PointX="0.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="ELearningModel.UserRole" Width="1.5" PointX="3" PointY="27.25" IsExpanded="true" />
+        <AssociationConnector Association="ELearningModel.FK_AuthentificationLog_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Chat_ChatCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Chat_ChatTopic" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_ChatSubscriber_Chat" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_ChatSubscriber_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Comment_CommentType" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Comment_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Course_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_CourseSubscriber_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Curs_GradeFormula" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Event_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Homework_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_PermissionUser_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_QuizQuestion_C0urse" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Result_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_CourseSubscriber_StudentsGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_CourseSubscriber_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_NoticeType_DeliveryFrequency" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_SetNotice_DeliveryFrequency" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Event_EventType" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Event_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Homework_GroupHomeworkQuestion" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Question_GroupHomeworkQuestion" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Homework_HomeworkType" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Homework_Resource" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Homework_TurninType" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Quiz_KeepScoreType" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_ModifyResult_Result" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_ModifyResult_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_SetNotice_NoticeType" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_PageDesign_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_PermissionRole_Permission" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_PermissionUser_Permission" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_PermissionRole_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_PermissionUser_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Post_PostType" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Post_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_ResourcePost_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Question_QuestionType" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_QuizQuestion_Question" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Quiz_QuizType" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Quiz_StudentsGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_QuizQuestion_Quiz" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Resource_ResourceCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_ResourcePost_Resource" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_Result_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_UserRole_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_SetNotice_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ELearningModel.FK_UserRole_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
